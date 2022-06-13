@@ -1,0 +1,21 @@
+<div class="header">
+    <h2 class="header-name">Ships</h2>
+    <div class="add">
+        <a routerLink="/ships-add">
+            <button class="myButton">
+                Add New Ship
+            </button>
+        </a>
+    </div>
+</div>
+<div class="body">
+    <div class="col-8 table-div">
+        <ngx-datatable class="material" [scrollbarH]="true" [headerHeight]="80" [footerHeight]="50"
+            [rows]="ships" [limit]="20" [rowHeight]="100">
+            <ngx-datatable-column name="Id" prop="id"></ngx-datatable-column>
+            <ngx-datatable-column name="Imo" prop="imo"></ngx-datatable-column>
+            <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
+            <ngx-datatable-column name="Note" prop="note"></ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+</div>

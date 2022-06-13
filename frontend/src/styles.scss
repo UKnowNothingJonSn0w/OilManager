@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+  }
+  .example-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+  width: 100%;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+  .sidebar-content {
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    padding: 16px;
+    height: 100%;
+  }
+  .single-item
+  {
+    text-decoration: none;
+    font-size: 18px;
+    text-align: justify;
+  }
+  .single-item a{
+    color:#000;
+  }
+  .single-item a:hover{
+    color:#4cadc8;
+  }
+  .single-item a:active{
+    color:#4cadc8;
+  }
+  .single-item svg
+  {
+    width: 50px;
+    height:50px;
+    padding-right: 15px;
+  }
+  .single-item img
+{
+  width: 60px;
+  height:50px;
+  padding-right: 15px;
+}
+.logo img{
+  width: 250px!important;
+  height:70px!important;
+}
+  mat-slide-toggle
+  {
+  color:#000;
+  }
+  .main
+  {
+    width: 100%;
+  }
+
+  .example-sidenav-content mat-expansion-panel
+  {
+    position: absolute;
+    top:20px;
+    right:30px;
+    background-color: white;
+    box-shadow: none;
+  }
+  .example-sidenav-content mat-panel-title{
+    padding-top: 15px;
+    text-decoration: none;
+  }
+  .example-sidenav-content mat-panel-title a
+  {
+    text-decoration: none;
+    color: #000;
+  }
+  .user
+  {
+    display: none;
+  }
+  .input-group-text{
+    background-color:#78D0FF;
+    color: #fff;
+}
+.body{
+  margin-top: 120px;
+}
+  @media only screen and (max-width : 800px){
+    .example-sidenav-content mat-expansion-panel
+    {
+        display: none;
+    }
+    .user{
+      display: block;
+    }
+    .user .single-item
+    {
+  padding-top:15px;
+    }
+     }
+     .sidebar-content mat-expansion-panel
+     {
+      text-decoration: none;
+      font-size: 18px;
+      text-align: justify;
+     }
+     .sidebar-content mat-expansion-panel a
+     {
+      color:#000;
+     }
+  
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@media only screen and (max-width : 500px){
+.header
+{
+  display: flex;
+  flex-direction: column;
+}
+}

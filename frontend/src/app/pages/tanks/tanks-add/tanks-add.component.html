@@ -1,0 +1,48 @@
+<div class="header">
+    <h2 class="header-name">Add Tanks</h2>
+    <div class="back">
+        <a routerLink="/tanks">
+            <button class="myButton">
+                Back </button>
+        </a>
+    </div>
+</div>
+<div class="body">
+    <div class="col-8 form-div">
+    <div class="row" *ngIf="!isloading">
+        <div class="col-lg-8 col-sm-10 form-div">
+           <form method="POST" [formGroup]="addTanksForm" (ngSubmit)="addTanks()">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name</span>
+                </div>
+                <input type="number" class="form-control" formControlName="name">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Medium</span>
+                </div>
+                <input type="number" class="form-control" formControlName="medium">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Volume</span>
+                </div>
+                <input type="text" class="form-control" formControlName="volume">
+            </div>
+            <div class="input-group mb-3 note-div">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Devices</span>
+                </div>
+                <input type="text" class="form-control" formControlName="devices">
+            </div>
+            <div class="add">
+                <button class="myButton" id="add_tank_button">
+                    Add Tank
+                </button>
+            </div>
+       </form>
+       </div>
+    </div>
+    </div>
+</div>

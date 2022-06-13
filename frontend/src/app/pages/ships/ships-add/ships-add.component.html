@@ -1,0 +1,49 @@
+<div class="header">
+    <h2 class="header-name">Add ships</h2>
+    <div class="back">
+        <a routerLink="/ships">
+            <button class="myButton">
+                Back
+            </button>
+        </a>
+    </div>
+</div>
+<div class="body">
+    <div class="col-8 form-div">
+    <div class="row" *ngIf="!isloading">
+        <div class="col-lg-8 col-sm-10 form-div">
+           <form method="POST" [formGroup]="addShipForm" (ngSubmit)="addShip()">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Ship id</span>
+                </div>
+                <input type="number" class="form-control" formControlName="id">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Imo</span>
+                </div>
+                <input type="number" class="form-control" formControlName="imo">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name</span>
+                </div>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="input-group mb-3 note-div">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Note</span>
+                </div>
+                <input type="text" class="form-control" formControlName="note">
+            </div>
+            <div class="add">
+                <button class="myButton" id="add_ship_button">
+                    Add Ship
+                </button>
+            </div>
+       </form>
+       </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="header">
+    <h2 class="header-name">Users Add</h2>
+    <div class="add">
+        <a routerLink="/users">
+            <button class="myButton">
+                Back
+            </button>
+        </a>
+    </div>
+</div>
+<div class="body">
+    <div class="col-8 form-div">
+    <div class="row" *ngIf="!isloading">
+        <div class="col-lg-8 col-sm-10 form-div">
+           <form method="POST" [formGroup]="addUserForm" (ngSubmit)="addUser()">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Id</span>
+                </div>
+                <input type="number" class="form-control" formControlName="id">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name</span>
+                </div>
+                <input type="number" class="form-control" formControlName="name">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Surname</span>
+                </div>
+                <input type="text" class="form-control" formControlName="surname">
+            </div>
+            <div class="input-group mb-3 note-div">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Department</span>
+                </div>
+                <input type="text" class="form-control" formControlName="department">
+            </div>
+            <div class="input-group mb-3 note-div">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Mail</span>
+                </div>
+                <input type="text" class="form-control" formControlName="mail">
+            </div>
+            <div class="input-group mb-3 note-div">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Phone</span>
+                </div>
+                <input type="text" class="form-control" formControlName="phone">
+            </div>
+            <div class="add">
+                <button class="myButton" id="add_user_button">
+                    Add Ship
+                </button>
+            </div>
+       </form>
+       </div>
+    </div>
+    </div>
+</div>

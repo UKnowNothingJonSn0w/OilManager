@@ -1,0 +1,50 @@
+<div class="header">
+    <h2 class="header-name">Add Waste</h2>
+    <div class="back">
+        <a routerLink="/devices-details">
+            <button class="myButton">
+                Back
+            </button>
+        </a>
+    </div>
+</div>
+<div class="body">
+    <div class="col-lg-4 col-sm-10 form-div">
+    <div class="row" *ngIf="!isloading">
+        <div class="col-lg-8 col-sm-10">
+           <form method="POST" [formGroup]="addWasteForm" (ngSubmit)="addWaste()">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Waste</span>
+                </div>
+                <input type="text" class="form-control" formControlName="waste">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Per</span>
+                </div>
+                <input type="text" class="form-control" formControlName="per">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Waste Units</span>
+                </div>
+                <input type="text" class="form-control" formControlName="waste_units">
+            </div>
+        
+            <div class="input-group mb-3 note-div">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Per Units</span>
+                </div>
+                <input type="text" class="form-control" formControlName="per_units">
+            </div>
+            <div class="add">
+                <button class="myButton" id="add_waste_button">
+                    Add Waste
+                </button>
+            </div>
+       </form>
+       </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="header">
+    <h2 class="header-name">Edit device</h2>
+    <div class="back">
+        <a routerLink="/devices">
+            <button class="myButton">
+                Back
+            </button>
+        </a>
+    </div>
+</div>
+<div class="body">
+    <div class="col-lg-8 col-sm-12 form-div">
+    <div class="row" *ngIf="!isloading">
+        <div class="col-10 form-div">
+           <form method="POST" [formGroup]="editDevicesForm" (ngSubmit)="updateDevice()">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name</span>
+                </div>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Notes</span>
+                </div>
+                <input type="text" class="form-control" formControlName="notes">
+            </div>
+            <div class="add">
+                <button class="myButton" id="edit_device_button">
+                    Edit Device
+                </button>
+            </div>
+       </form>
+       </div>
+    </div>
+    </div>
+</div>

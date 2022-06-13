@@ -1,0 +1,21 @@
+<div class="header">
+    <h2 class="header-name">Barrels</h2>
+    <div class="add">
+        <a routerLink="/barrels-add">
+            <button class="myButton">
+                Buy Barrel
+            </button>
+        </a>
+    </div>
+</div>
+<div class="body">
+    <div class="col-8 table-div">
+        <ngx-datatable class="material" [scrollbarH]="true" [headerHeight]="80" [footerHeight]="50"
+            [rows]="barrels" [limit]="20" [rowHeight]="100">
+            <ngx-datatable-column name="Type" prop="type"></ngx-datatable-column>
+            <ngx-datatable-column name="Medium" prop="medium"></ngx-datatable-column>
+            <ngx-datatable-column name="Qty" prop="qty"></ngx-datatable-column>
+            <ngx-datatable-column name="Price" prop="price"></ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+</div>

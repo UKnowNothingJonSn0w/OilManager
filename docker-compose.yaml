@@ -1,0 +1,60 @@
+version: '3'
+
+services:
+
+  oil_phpmyadmin:
+    container_name: oil_phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    ports:
+      - 8018:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=localhost
+  oil_db:
+    # image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    container_name: oil_db
+    build: ./db
+    restart: always
+    # volumes:
+    #   - . :/var/lib/mysql
+    ports: 
+      - "9906:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: my_secret_pw_shh
+      MYSQL_DATABASE: smart_oil
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devpass
+
+
+  oil_frontend:
+    container_name: oil_frontend_container
+    restart: always
+    build: ./frontend
+    ports:
+      - "4218:4200"
+      - '9876:9876'
+    volumes:
+      - ./frontend:/frontend
+    command: ng serve --host 0.0.0.0 --disable-host-check --port 4200 --poll=2000
+    environment:
+      - TZ=Europe/Warsaw
+
+
+  oil_backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile_dev
+    env_file: .env_docker
+    restart: always
+    networks:
+      - default
+    # ports:
+    #   - "5015:8080"
+    ports:
+      - 5018:8080
+    volumes:
+      - ./backend:/app
+    environment:
+      - TZ=Europe/Warsaw

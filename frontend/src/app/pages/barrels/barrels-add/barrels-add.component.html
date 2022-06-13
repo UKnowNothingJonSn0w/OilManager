@@ -1,0 +1,105 @@
+<div class="header">
+    <h2 class="header-name">Barrels</h2>
+    <div class="back">
+        <a routerLink="/barrels">
+            <button class="myButton">
+                Back
+            </button>
+        </a>
+    </div>
+</div>
+<div class="body">
+    <div class="col-8 form-div">
+        <div class="row" *ngIf="!isloading">
+            <div class="col-lg-8 col-sm-10 form-div">
+                <form method="POST" [formGroup]="addBarrelsForm" (ngSubmit)="addBarrels()">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Type</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="type">
+                        <div class="add-type">
+                            <button (click)='addTypeForm()' class="myTypeButton" id="add_type_button">
+                                Add Type
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Medium</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="medium">
+                        <div class="add-medium">
+                            <button (click)='addMediumForm()' class="myTypeButton" id="add_medium_button">
+                                Add Medium
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Qty</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="qty">
+                    </div>
+                    <div class="input-group mb-3 note-div">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Price</span>
+                        </div>
+                        <input type="number" class="form-control" formControlName="price">
+                    </div>
+                    <div class="add">
+                        <button class="myButton" id="add_barrels_button">
+                            Buy Barrels
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" *ngIf="addtypeform">
+            <div class="col-lg-8 col-sm-10 add-type-form-div">
+                <form method="POST" [formGroup]="addBarrelsTypeForm" (ngSubmit)="addBarrelsType()">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Name</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Volume</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="volume">
+                    </div>
+                    <div class="add">
+                        <button class="myButton" id="add_barrels_type_button">
+                            Add Type
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" *ngIf="addmediumform">
+            <div class="col-lg-8 col-sm-10 add-medium-form-div">
+                <form method="POST" [formGroup]="addBarrelsMediumForm" (ngSubmit)="addBarrelsMedium()">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Name</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Volume</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="volume">
+                    </div>
+                    <div class="add">
+                        <button class="myButton" id="add_barrels_medium_button">
+                            Add Medium
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

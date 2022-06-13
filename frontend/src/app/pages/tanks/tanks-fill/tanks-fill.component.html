@@ -1,0 +1,66 @@
+<div class="header">
+    <h2 class="header-name">Fill Tanks</h2>
+    <div class="back">
+        <a routerLink="/tanks">
+            <button class="myButton">
+                Back </button>
+        </a>
+    </div>
+</div>
+<div class="body">
+    <div class="col-12 fill-tank-div">
+    <h1>Source:</h1>
+    <div class="col-8 form-div">
+        <h2>Barrel:</h2>
+        <div class="row" *ngIf="!isloading">
+            <div class="col-lg-8 col-sm-10 form-div">
+                <form method="POST" [formGroup]="FillTankForm" (ngSubmit)="fillTank()">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Barell type</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="barrel_type">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">QTY</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="qty">
+                    </div>
+                    <div class="add">
+                        <button class="myButton" id="fill_tank_button">
+                            Fill
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-8 form-div">
+        <h2>Stream:</h2>
+        <div class="row" *ngIf="!isloading">
+            <div class="col-lg-8 col-sm-10 form-div">
+                <form method="POST" [formGroup]="FillStreamForm" (ngSubmit)="fillStream()">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Qty</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="qty">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Price</span>
+                        </div>
+                        <input type="number" class="form-control" formControlName="price">
+                    </div>
+                    <div class="add">
+                        <button class="myButton" id="fill_stream_button">
+                            Fill
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
